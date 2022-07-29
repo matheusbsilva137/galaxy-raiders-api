@@ -177,7 +177,7 @@ class Vector2DTest {
     val target = Vector2D(25.0, 0.0)
     val resultProjection: Double = vector.scalarProject(target)
 
-    assertEquals(vector.dx, resultProjection)
+    assertEquals(vector.dx, resultProjection, DELTA)
   }
 
   @ParameterizedTest(name = "({0})")
@@ -188,7 +188,7 @@ class Vector2DTest {
 
     assertAll(
       "Vectors should be equal",
-      { assertEquals(vector.dx, resultProjection.dx) },
+      { assertEquals(vector.dx, resultProjection.dx, DELTA) },
       // DELTA is required to check if equals 0.0 or -0.0
       { assertEquals(0.0, resultProjection.dy, DELTA) },
     )
